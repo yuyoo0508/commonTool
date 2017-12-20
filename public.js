@@ -13,9 +13,7 @@ function isBrowser() {
           ? (Sys.chrome = s[1])
           : (s = ua.match(/opera.([\d.]+)/))
             ? (Sys.opera = s[1])
-            : (s = ua.match(/version\/([\d.]+).*safari/))
-              ? (Sys.safari = s[1])
-              : 0;
+            : (s = ua.match(/version\/([\d.]+).*safari/)) ? (Sys.safari = s[1]) : 0;
   return Sys;
 }
 // 传参(获取url)
@@ -51,18 +49,13 @@ function timeParse(stringTime) {
 function formatTime(time, flag) {
   var now = new Date(time);
   var year = now.getFullYear();
-  var month =
-    now.getMonth() + 1 < 10 ? "0" + (now.getMonth() + 1) : now.getMonth() + 1;
+  var month = now.getMonth() + 1 < 10 ? "0" + (now.getMonth() + 1) : now.getMonth() + 1;
   var date = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
   var hour = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
-  var minute =
-    now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
-  var second =
-    now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
+  var minute = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+  var second = now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
   if (flag) {
     return year + "-" + month + "-" + date;
   }
-  return (
-    year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second
-  );
+  return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }
